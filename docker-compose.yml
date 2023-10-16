@@ -13,7 +13,7 @@ services:
   accuknox_db:
     image: postgres
     volumes:
-      - merch_db_data:/var/lib/postgresql/data
+      - accuknox_db_data:/var/lib/postgresql/data
     ports:
       - 5432:5432
     networks:
@@ -24,7 +24,7 @@ services:
 
 
 volumes:
-  merch_db_data:
+  accuknox_db_data:
 
 networks:
   accuknox_network:
