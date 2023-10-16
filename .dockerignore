@@ -1,0 +1,5 @@
+env
+env_2
+__pycache__/
+*trash*
+static_files

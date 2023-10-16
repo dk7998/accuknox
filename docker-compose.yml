@@ -1,0 +1,30 @@
+version: '3.9'
+
+services:
+  accuknox_django:
+    build: .
+    ports:
+      - 8000:8000
+    networks:
+      - accuknox_network
+    depends_on:
+      - accuknox_db
+  
+  accuknox_db:
+    image: postgres
+    volumes:
+      - merch_db_data:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    networks:
+      - accuknox_network
+    environment:
+      - POSTGRES_PASSWORD=AccuKnox@123
+
+
+
+volumes:
+  merch_db_data:
+
+networks:
+  accuknox_network:
